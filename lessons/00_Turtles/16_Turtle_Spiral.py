@@ -38,7 +38,7 @@ for i in range(50):
     # Move the turtle (5*i) pixels. 'i' is the loop variable
     myTurtle.forward(9 * i)
 
-    # Turn the turtle (360/7) degrees to the right
+    # Turn the turtle (36/7) degrees to the right
     myTurtle.right(360 / 7 + i*5)
 
     # Change the turtle width to 'i' (the loop variable)
