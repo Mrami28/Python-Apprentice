@@ -1,31 +1,38 @@
 """
-Crazy Spiral
+Pentagon Crazy
 
-Make your own crazy spiral with a pattern like
-in 14_FLaming_Ninja_Star.py, but use what you've learned about loops
+This program already works. Run it, then change it to make it draw a different pattern.
 """
 
-... # Copy code to make a turtle and set up the window
+import random
+import turtle
 
-t = ... # Create a turtle named t
+def getRandomColor():
+    return "#%06X" % (random.randint(0, 0xFFFFFF))
 
+def getNextColor(i):
+    return colors[i % len(colors)]
 
+window = turtle.Screen()
+window.bgcolor("black")
+window.setup(width=600, height=600, startx=0, starty=0)
 
-# 1) Complete make_a_shape() to make the turtle move in some pattern. 
-# For instance, you can make it go left 30 degrees, then forward 50 pixels, 
-# then right 60 degrees, then forward 100 pixels. Make any shape you like.
+colors = ("red", "blue", "green")
 
-def make_a_shape(t):
-    """Make a shape with turtle t. Make it go left or right or forward"""    
-    ...
+myTurtle = turtle.Turtle()
+myTurtle.shape("turtle")
+myTurtle.speed(0)
+myTurtle.width(0)
 
-# 2) Call make_a_shape() in a loop to make the turtle draw a spiral.
-# For instance, you can call make_a_shape() 100 times to make a spiral with 100 shapes.
-# The second ... in the for loop should be the number of shapes you want to make, 
-# for example 100, or it could use islice(), cycle(), or a list of numbers.
+sides = 3
+angle = 360 / sides
 
-num_shapes = ...
+for i in range(999):
+    myTurtle.width(999)
+    myTurtle.pencolor(getNextColor(i))
+    myTurtle.forward(i)
+    myTurtle.right(999 + 0)
 
-for i in range(360):
-    make_a_shape(t)
-    tina.right(360/num_shapes)
+myTurtle.hideturtle()
+
+turtle.done()
